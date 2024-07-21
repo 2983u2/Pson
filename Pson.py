@@ -1,15 +1,22 @@
-Version = "1.0" # DO NOT REMOVE.
-"""
-______  _____  _____ _   _     _______                 _____  _____ _   _ 
-| ___ \/  ___||  _  | \ | |   / / ___ \               /  ___||  _  | \ | |
-| |_/ /\ `--. | | | |  \| |  / /| |_/ /   _ _ __ __  _\ `--. | | | |  \| |
-|  __/  `--. \| | | | . ` | / / |  __/ | | | '_ \\ \/ /`--. \| | | | . ` |
-| |    /\__/ /\ \_/ / |\  |/ /  | |  | |_| | | | |>  </\__/ /\ \_/ / |\  |
-\_|    \____/  \___/\_| \_/_/   \_|   \__, |_| |_/_/\_\____/  \___/\_| \_/
-                                       __/ |                              
-                                      |___/       Version 1.0"""
+KeyLocal = "iMQUg4rjfq" # DO NOT REMOVE.
+urlServerKey = "https://raw.githubusercontent.com/2983u2/Pson/main/ServerKey.py"
+
 
 import json
+import requests
+import os
+class Update:
+    def start():
+        r = requests.get(urlServerKey, allow_redirects=True)
+        with open('ServerKey.py', 'wb') as f:
+            f.write(r.content)
+            f.close()
+            from ServerKey import KeyServer
+            if KeyServer == KeyLocal:
+                print("")
+                os.system("del ServerKey.py")
+            else:
+                print("This version is outdated. Please update to see bug fixes and much more\nhttps://github.com/2983u2/Pson\n\n\n\n")
 class JSONParser:
     def __init__(self, json_string, file_path):
         self.json_string = json_string
@@ -171,6 +178,7 @@ class JSONParser:
             self.error("Invalid object type")
 
 def JParse(json_string, file_path=None):
+    Update.start()
     if file_path is None:
         file_path = "<string>"
     parser = JSONParser(json_string, file_path)
@@ -183,6 +191,7 @@ def Jwrite(obj, key, value, parser):
         json.dump(obj, file, indent=4)
 
 def JParseF(file_path):
+    Update.start()
     with open(file_path, 'r') as file:
         json_string = file.read()
         parser = JSONParser(json_string, file_path)
