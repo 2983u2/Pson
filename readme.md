@@ -29,5 +29,5 @@ Please note that an actual pip system will work in the future.
 - Renamed "parse_json()" to "JParse()" 
 ```
 
-Check out "Old-Patches.txt" for our old patches !
+
 
