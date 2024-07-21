@@ -26,9 +26,4 @@ An actual PIP system will work in the future.
 More in https://github.com/2983u2/Pson/tree/main/examples.
 
 # Latest patch
-- Removed If statements
-- Removed non-needed variables
-- Cleaned up Jwrite a little
-- Added a Parser object for "JParseF()"
-- Renamed "parse_json_file()" to "JParseF()"
-- Renamed "parse_json()" to "JParse()" 
+- Added update checker that spawns when `JParse()` & `JParseF()` is called.
