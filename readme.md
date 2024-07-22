@@ -17,8 +17,8 @@ An actual PIP system will work in the future.
 
 # Examples
 ## Functions
-`JParseF(filepath)` - Parses a File
-`JParse(jsonstring)` - Takes a String
+`JParseF(filepath)` - Parses a File<br>
+`JParse(jsonstring)` - Takes a String<br>
 `jwrite(obj, key, value, parser)` - Writes to a file (supports with ^)
 
 ## Comments
