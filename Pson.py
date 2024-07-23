@@ -1,5 +1,4 @@
-KeyLocal = "iMQUg4rjfq" # DO NOT REMOVE.
-urlServerKey = "https://raw.githubusercontent.com/2983u2/Pson/main/ServerKey.py"
+KeyLocal = "H8aL4eK2nD" # DO NOT REMOVE.
 
 
 import json
@@ -7,7 +6,7 @@ import requests
 import os
 class Update:
     def start():
-        r = requests.get(urlServerKey, allow_redirects=True)
+        r = requests.get("https://raw.githubusercontent.com/2983u2/Pson/main/ServerKey.py", allow_redirects=True)
         with open('ServerKey.py', 'wb') as f:
             f.write(r.content)
             f.close()
@@ -16,7 +15,7 @@ class Update:
                 print("")
                 os.system("del ServerKey.py")
             else:
-                print("This version is outdated. Please update to see bug fixes and much more\nhttps://github.com/2983u2/Pson\n\n\n\n")
+                print("This version is outdated. Please update to see bug fixes and much more\nhttps://github.com/2983u2/Pson/releases\n\n\n\n")
 class JSONParser:
     def __init__(self, json_string, file_path):
         self.json_string = json_string
@@ -182,9 +181,8 @@ def JParse(json_string, file_path=None):
     if file_path is None:
         file_path = "<string>"
     parser = JSONParser(json_string, file_path)
-    
-    return parser.parse()
-
+    obj = parser.parse()
+    return {'obj': obj, 'parser': parser}  # Return a dictionary instead of a tuple
 def Jwrite(obj, key, value, parser):
     obj[key] = value
     with open(parser.file_path, "w") as file:
@@ -196,7 +194,7 @@ def JParseF(file_path):
         json_string = file.read()
         parser = JSONParser(json_string, file_path)
         obj = parser.parse()
-        return obj, parser
+        return {'obj': obj, 'parser': parser}  # Return a dictionary instead of a tuple
 
 class JwriteContext:
     def __init__(self, obj, key, value, parser):

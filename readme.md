@@ -26,4 +26,4 @@ An actual PIP system will work in the future.
 More in https://github.com/2983u2/Pson/tree/main/examples.
 
 # Latest patch
-- Added update checker that spawns when `JParse()` & `JParseF()` is called.
+Check out `patchnotes.txt` from now on !

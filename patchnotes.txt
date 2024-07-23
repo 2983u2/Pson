@@ -1,0 +1,3 @@
+- Cleaned up some code
+- Made `JParseF()` & `JParse()` return dictionaries instead of Tuples
+- Added more examples showing how the code can be used properly
